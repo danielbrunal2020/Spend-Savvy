@@ -1,0 +1,33 @@
+{
+	"name": "Spend Savvy",
+ 	"version": "1.2.1",
+	"manifest_version": 2,
+	"content_security_policy":"script-src 'self' https://cdn.jsdelivr.net; object-src 'self'",
+	"permissions": ["https://www.amazon.com/your-orders/*", "https://*.amazon.com/gp/css/summary*", "storage"],
+	"icons": {
+		"16": "icon16.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+	 
+	"content_scripts": [
+		{
+			"js": ["content_script.js"],
+			"matches":["https://www.amazon.com/your-orders/pop/ref=ppx_yo_dt_b_pop?_encoding=UTF8&gen=canonical&lineItemId*", "https://*.amazon.com/gp/buy/thankyou/handlers/display*"]
+		},
+		{
+			"js": ["cancel_script.js"],
+			"matches":["https://*.amazon.com/gp/css/order/edit.html*"]
+		}
+	],
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+
+	"browser_action": {
+		"default_popup": "popup.html",
+		"default_title": "Spend Savvy"
+	}
+}
+
