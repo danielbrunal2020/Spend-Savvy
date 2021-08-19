@@ -1,15 +1,13 @@
-//lines 2 and 7 for testing; lines 3 and 8 for actual orders
-//var linkArray = document.getElementsByClassName('a-size-base-plus a-link-normal');
 var linkArray = document.getElementsByClassName('a-link-emphasis');
 var urlToOpen;
 var i;
 for(i = 0; i < linkArray.length; i++) {
-    //if(linkArray[i].innerText == "View order details") {
-    if(linkArray[i].innerText.includes("Review or edit your order")) {
+    if(linkArray[i].innerText.includes("Review or edit your recent orders")) {
         urlToOpen = linkArray[i].href;
+        break;
     }
 }
-//sends url of order details to background script
+//sends url of recent orders to background script
 chrome.runtime.sendMessage({from: "content_script", url: urlToOpen});
 
 //global variables to be used throughout content script

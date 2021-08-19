@@ -1,0 +1,384 @@
+/* the actual extension popup itself */
+body {
+    width: 450px;
+    height: 560px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #000000;
+    white-space: normal;
+}
+
+/*h1 is used for extension title*/
+h1 {
+    font-size: 4em;
+    font-family: "Century gothic";
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/*h2 is used for order history*/
+h2 {
+    font-size: 1.2em;
+    font-family: "bahnschrift";
+    color: #ffffff;
+    text-align: center;
+}
+
+/* ----------*/
+/*ID's*/
+/* ----------*/
+
+/*The following represent the main data elements*/
+#Month-Total {
+    font-size: 2.2em;
+    font-family: "bahnschrift";
+    color: #23d16e;
+    width: 430px;
+    text-align: center;
+    margin-top: 22px;
+    margin-bottom: 25px;
+}
+
+#Year-Total {
+    font-size: 2.2em;
+    font-family: "bahnschrift";
+    color: #23d16e;
+    width: 430px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#Grand-Total {
+    font-size: 2.2em;
+    font-family: "bahnschrift";
+    color: #23d16e;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+#Savings {
+    font-size: 2.2em;
+    font-family: "bahnschrift";
+    color: #23d16e;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+/*button used to hide or show months graph*/
+#mGraphButton {
+    font-family: "bahnschrift";
+    font-size: 1.3em;
+    color: rgb(255, 255, 255);
+    width: 300px;
+    height: 7%;
+    background: #045e29;
+    border: 2px solid #E3B23C;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 4px #00000067;
+    border-radius: 8px;
+}
+
+/* When moving the mouse over the mGraph button */
+#mGraphButton:hover {
+    border: 2px solid #23d16e;
+}
+
+/*these represent the graphs used to display stats*/
+#allMonthChart {
+    height: 303px; 
+    width: 400px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-left: 25px;
+    padding-right: 0px;
+    box-shadow: 7px 7px 8px #00000067;
+    border: 2px solid #E3B23C;
+}
+
+/*button used to hide or show all time graph*/
+#yGraphButton {
+    font-family: "bahnschrift";
+    font-size: 1.3em;
+    color: rgb(255, 255, 255);
+    width: 300px;
+    height: 7%;
+    background: #045e29;
+    border: 2px solid #E3B23C;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 4px #00000067;
+    border-radius: 8px;
+}
+
+/* When moving the mouse over yGraph button */
+#yGraphButton:hover {
+    border: 2px solid #23d16e;
+}
+
+#allTimeChart {
+    height: 303px; 
+    width: 400px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-left: 25px;
+    padding-right: 0px;
+    box-shadow: 7px 7px 8px #00000067;
+    border: 2px solid #E3B23C;
+}
+
+/*button used to hide or show order history*/
+#historyButton {
+    font-family: "bahnschrift";
+    background: #045e29;
+    border: 2px solid #E3B23C;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: rgb(255, 255, 255);
+    width: 300px;
+    height: 7%;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px #00000067;
+}
+
+/* When moving the mouse over the history button */
+#historyButton:hover {
+    border: 2px solid #23d16e;
+}
+
+/*the element which contains all order history*/
+#allPurchases {
+    margin-bottom: 20px;
+    background-color: #54a073;
+    border: 2px solid #13753c;
+    width: 390px;
+    margin-left: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#confirmItems {
+    margin-left: 102px;
+    font-family: "bahnschrift";
+    border: 2px solid #095e09;
+    cursor: pointer;
+    background-color: #07825d;
+    color: white;
+    position: relative;
+    top: 20px;
+}
+
+#confirmItems:hover {
+    border: 2px solid #04B304;
+}
+
+#confirmItems:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: default;
+}
+
+#fullButton {
+    width: 200px;
+    height: 58px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    margin-left: 75px;
+    font-family: "bahnschrift";
+    font-size: 0.9em;
+    font-family: "bahnschrift";
+    border: 3px solid #095e09;
+    cursor: pointer;
+    background-color: #07825d;
+    color: white;
+}
+
+#fullButton:hover {
+    border: 3px solid #04B304;
+}
+
+#partButton {
+    width: 200px;
+    height: 58px;
+    margin-left: 75px;
+    font-family: "bahnschrift";
+    font-size: 0.9em;
+    font-family: "bahnschrift";
+    border: 3px solid #095e09;
+    cursor: pointer;
+    background-color: #07825d;
+    color: white;
+}
+
+#partButton:hover {
+    border: 3px solid #04B304;
+}
+
+#chooseRefund {
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+#chooseItems {
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+#returnItems {
+    margin-top: 10px;
+    overflow-y: auto
+}
+
+#refundSuccess {
+    font-size: 1.1em;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/*overwrites some features of the .alert class specifically for a successful refund */
+#refundProcess {
+    background-color: #73bb7c;
+    font-size: 2.055em;
+    overflow-y: auto;
+}
+
+/*darkens screen behind alert and prevents user from interacting with anything until it's closed */
+#dialogoverlay {
+    opacity: 0.6;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    left: 0px;
+    top: 0px;
+    background: #000000;
+}
+
+/* ----------*/
+/*Classes*/
+/* ----------*/
+
+/* alert class used to customize the alert messages*/
+.alert {
+    padding: 20px;
+    width: 350px;
+    height: 250px;
+    left: 37px;
+    top: 180px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4em;
+    border: 2px solid #ffffff;
+    margin-bottom: 15px;
+    z-index: 10;
+    position: fixed;
+}
+  
+/* The close button for alerts */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 0px;
+    cursor: pointer;
+}
+  
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+/* provides more data when hovering over an element*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+  
+/* Tooltip text for this month and this year's spending*/
+.tooltip .tooltiptextTop {
+    visibility: hidden;
+    width: 430px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 0.5em;
+    font-family: "bahnschrift";
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -220px;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Tooltip text for grand total and total saved*/
+.tooltip .tooltiptextBot {
+    visibility: hidden;
+    width: 230px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 0.5em;
+    font-family: "bahnschrift";
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -120px;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Tooltip text for refund*/
+.tooltip .tooltiptextRefund {
+    visibility: hidden;
+    width: 315px;
+    height: 120px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1em;
+    font-family: "bahnschrift";
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    top: 15px;
+    left: 110%;
+    position: absolute;
+    z-index: 1;
+}
+  
+/* Show the tooltip text when you mouse over this month and this year's spending */
+.tooltip:hover .tooltiptextTop {
+    visibility: visible;
+}
+
+/* Show the tooltip text when you mouse over grand total and total saved */
+.tooltip:hover .tooltiptextBot {
+    visibility: visible;
+}
+
+/* Show the tooltip text when you mouse over refund */
+.tooltip:hover .tooltiptextRefund {
+    visibility: visible;
+}
+

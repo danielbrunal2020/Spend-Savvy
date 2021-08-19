@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sSStyles.css">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+<body>
+    <img id='ssTitle' src="title.png"/>
+    <div id= "Month-Total" class="tooltip">
+        <span class="tooltiptextTop">The total amount spent by the user on Amazon during the current month.</span>
+    </div> 
+    <div id= "Year-Total" class="tooltip">
+        <span class="tooltiptextTop">The total amount spent by the user on Amazon during the current year.</span>
+    </div> 
+    <div id= "Grand-Total" class="tooltip">
+        <span class="tooltiptextBot">The total amount spent by the user on Amazon since installing extension.</span>
+    </div><div id= "Savings" class="tooltip"> 
+        <span class="tooltiptextBot">The total amount saved on all orders through gift cards or returns.</span>
+    </div>
+    <br>
+    <button id="mGraphButton">View monthly spending graph</button>
+    <div id="allMonthChart" style="display:none;">
+        <canvas id="monthChart" style="background-color: #ffffff;" ></canvas>
+    </div>
+    <button id="yGraphButton">View yearly spending graph</button>
+    <div id="allTimeChart" style="display:none;">
+        <canvas id="yearChart" style="background-color: #ffffff;"></canvas>
+    </div>
+    <br>
+    <button id="historyButton">Order History/Item Returns</button>
+    <div id= "allPurchases" style="display:none;"></div>
+    <div id="dialogoverlay" style="display:none;"></div>
+    <div id="refundProcess" class="alert" style="display:none;">
+        <span id="exit" class="closebtn">&times;</span>
+        <span id='chooseItems' style="display:none;">Select returned item(s)</span> 
+        <div id='returnItems' style="display:none;"></div>
+        <button id="confirmItems" style="display:none;" disabled>Click to confirm items</button>
+        <br>
+        <span id='chooseRefund'>Did you return an entire order or only part of an order?</span> 
+        <span id='refundSuccess' style="display:none;">Update Successful! <br><br> Reopen extension to <br> view changed data.</span> 
+        <button id="fullButton">Entire Order</button><button id="partButton">Part of Order</button>
+    </div>
+    <script src="popup.js"></script> 
+</body>
+</html>

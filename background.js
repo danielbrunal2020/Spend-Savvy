@@ -52,6 +52,18 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         //open a new tab with order details
         chrome.tabs.create({ url: request.url }, function(tab) {
             //inject the order detail tab with new_tab script which gathers data
+            chrome.tabs.executeScript(tab.id, {'file': 'find_order_detail.js'}, function() {
+                //close tab once all data has been gathered
+                chrome.tabs.remove(tab.id);
+            });           
+        }); 
+        //keep focus on originalTab rather than shifting to order details
+        chrome.tabs.update(originalTab, {selected: true}); 
+    } 
+    if(request.from == "order_details") {  
+        //open a new tab with order details
+        chrome.tabs.create({ url: request.url }, function(tab) {
+            //inject the order detail tab with new_tab script which gathers data
             chrome.tabs.executeScript(tab.id, {'file': 'new_tab.js'}, function() {
                 //close tab once all data has been gathered
                 chrome.tabs.remove(tab.id);
@@ -59,7 +71,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         }); 
         //keep focus on originalTab rather than shifting to order details
         chrome.tabs.update(originalTab, {selected: true}); 
-    }        
+    }
     //runs if message received from new_tab script
     if(request.from == "new_tab") {
         //updates and sends purchase value, order number, and order data to originalTab (which is being analyzed by content script)
